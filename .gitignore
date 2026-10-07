@@ -1,0 +1,19 @@
+# Private notes (not pushed)
+CV-06_project_scope.pdf
+weekly-task-update/
+
+# Data and model files
+data/
+*.pt
+*.pth
+*.npy
+
+# Python
+__pycache__/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Secrets / OS
+.env
+.DS_Store
