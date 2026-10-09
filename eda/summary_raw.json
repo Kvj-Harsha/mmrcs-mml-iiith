@@ -1,0 +1,165 @@
+{
+ "integrity": {
+  "images": 40494,
+  "captions": 202604,
+  "overlap": 0,
+  "files_ok": true,
+  "dup_within_exact": 56,
+  "dup_within_normalised": 104,
+  "texts_on_multiple_images": 2548
+ },
+ "text": {
+  "label": "raw",
+  "captions": 202604,
+  "tokens": 2117744,
+  "types_all_splits": 31748,
+  "train_tokens": 1595328,
+  "train_types": 27588,
+  "ttr": 0.01729299554699723,
+  "root_ttr": 21.84214186270567,
+  "mtld": 34.293017932994566,
+  "hapax": 12862,
+  "hapax_pct_types": 0.4662171958822677,
+  "hapax_pct_tokens": 0.008062291892325591,
+  "dis_legomena": 3616,
+  "dis_pct_types": 0.131071480353777,
+  "hapax_dis_ratio": 3.5569690265486726,
+  "zipf_slope": -1.0898525032947801,
+  "heaps_K": 6.094802499592724,
+  "heaps_beta": 0.6073814575073505,
+  "len_mean": 10.45262679907603,
+  "len_std": 2.3753561431597054,
+  "len_median": 10.0,
+  "len_p95": 15.0,
+  "len_p99": 19.0,
+  "len_min": 6,
+  "len_max": 50,
+  "chars_mean": 52.28690450336617,
+  "word_len_mean": 4.096913612749228,
+  "stopword_share": 0.4487591266498175,
+  "pos_noun": 0.3662368864384716,
+  "pos_verb": 0.11354238456237079,
+  "pos_adj": 0.07954762998698216,
+  "pos_det": 0.20958725782984913,
+  "pos_adp": 0.15896603874722415,
+  "train_lemmas": 23569,
+  "types_per_lemma": 1.1705205990920278,
+  "types_not_dictionary_as_written": 15717,
+  "likely_typo_types": 2593,
+  "vocab_min1": 27588,
+  "train_coverage_min1": 1.0,
+  "val_oov_tokens_min1": 0.008775015485321445,
+  "val_oov_captions_min1": 0.07732,
+  "vocab_min5": 8122,
+  "train_coverage_min5": 0.9810496650218639,
+  "val_oov_tokens_min5": 0.022134450825501455,
+  "val_oov_captions_min5": 0.1786,
+  "jaccard_train_val": 0.3123043258710655,
+  "jaccard_train_test": 0.3113879003558719,
+  "chars_has_uppercase": 0.8515922686620205,
+  "chars_starts_uppercase": 0.8501855837002231,
+  "chars_all_caps_word": 0.012349213243568736,
+  "chars_ends_with_period": 0.7509328542378235,
+  "chars_has_punctuation": 0.7628427869143748,
+  "chars_has_digit": 0.0034698229057669146,
+  "chars_has_non_ascii": 0.0,
+  "chars_has_double_space": 0.011455844899409685,
+  "chars_has_edge_whitespace": 0.0,
+  "chars_distinct_characters": 89,
+  "normalised_types": 16161,
+  "words_with_variants": 5891,
+  "left_right_captions": 0.002912084657756017
+ },
+ "images": {
+  "unreadable": 0,
+  "grayscale": 66,
+  "modes": {
+   "RGB": 40428,
+   "L": 66
+  },
+  "distinct_sizes": 1534,
+  "max_side_640": 0.8315799871585914,
+  "min_side_min": 111,
+  "orientation": {
+   "landscape": 0.717,
+   "portrait": 0.237,
+   "square-ish": 0.046
+  },
+  "top_sizes": {
+   "640x480": 0.214,
+   "640x427": 0.122,
+   "480x640": 0.074,
+   "500x375": 0.046
+  },
+  "pixel_mean": [
+   0.4682,
+   0.4451,
+   0.4063
+  ],
+  "pixel_std": [
+   0.2693,
+   0.2645,
+   0.2794
+  ],
+  "very_dark": 320,
+  "very_bright": 75,
+  "low_contrast": 226,
+  "blurry_bottom1pct_threshold": 0.0016204718093749074,
+  "hash_candidates": 370,
+  "duplicate_pairs": 4,
+  "duplicate_pairs_cross_split": 0,
+  "duplicate_cross_split_detail": {}
+ },
+ "objects": {
+  "instances": 291829,
+  "per_image_mean": 7.206721983503729,
+  "per_image_median": 4.0,
+  "images_without_objects": 367,
+  "person_share": 0.5341285128661036,
+  "size_share": {
+   "small": 0.413,
+   "medium": 0.342,
+   "large": 0.244
+  },
+  "top_categories": {
+   "person": 0.534,
+   "chair": 0.109,
+   "car": 0.103,
+   "dining table": 0.098,
+   "cup": 0.076,
+   "bottle": 0.072,
+   "bowl": 0.059,
+   "handbag": 0.056
+  },
+  "rarest": {
+   "scissors": 302,
+   "parking meter": 261,
+   "toaster": 74,
+   "hair drier": 70
+  },
+  "split_category_spearman_min": 0.9606053687008601,
+  "mention_overall": 0.6171875670249912,
+  "mention_by_area": {
+   "<1%": 0.33,
+   "1\u20135%": 0.607,
+   "5\u201310%": 0.799,
+   "10\u201325%": 0.902,
+   "25\u201350%": 0.945,
+   ">50%": 0.876
+  },
+  "least_mentioned": {
+   "handbag": 0.119,
+   "spoon": 0.135,
+   "potted plant": 0.136,
+   "bottle": 0.154,
+   "backpack": 0.165
+  },
+  "most_mentioned": {
+   "skateboard": 0.973,
+   "zebra": 0.985,
+   "bear": 0.988,
+   "elephant": 0.989,
+   "giraffe": 0.998
+  }
+ }
+}
