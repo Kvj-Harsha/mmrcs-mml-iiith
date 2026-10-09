@@ -1,0 +1,17 @@
+metric,COCO,CC
+Captions per image,5,1
+Mean caption length (words),10.462387468580092,9.585328014184396
+Median / 99th pct length,10 / 19,9 / 24
+Mean word length (chars),4.011488375648704,4.665693288947402
+Stopword share,0.4487020905159179,0.3896685111322031
+Captions without a/an/the,0.04472581586418984,0.12771464646464648
+"MTLD (lexical diversity, size-independent)",25.08269899540126,153.88430174969625
+Hapax share of vocabulary,0.3536526366715046,0.24786122609895525
+Zipf slope,-1.1810288320715416,-0.9261094063645924
+Heaps β,0.5493997691032375,0.5536576644873834
+POS: nouns / verbs / adjectives,35.4% / 11.6% / 8.2%,39.5% / 11.4% / 9.7%
+Training vocabulary (own pipeline),5718,26990
+Own val words unknown to own vocabulary,0.011393768960958575,0.0014356002766793261
+Own val captions with an unknown word,0.10254871363981916,0.013383838383838383
+Val words unknown to the OTHER dataset's vocabulary,0.007316924064465349,0.12668519896114744
+Val captions with a word unknown to the OTHER vocabulary,0.06857920217660946,0.6426767676767676

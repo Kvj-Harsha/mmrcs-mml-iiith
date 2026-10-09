@@ -1,0 +1,237 @@
+{
+ "download": {
+  "rows": 15840,
+  "status": {
+   "ok": 10038,
+   "http_error": 3955,
+   "connection_error": 1179,
+   "not_image": 457,
+   "timeout": 165,
+   "placeholder": 24,
+   "corrupt": 19,
+   "junk": 3
+  },
+  "ok_share": 0.6337121212121212,
+  "http_codes": {
+   "400": 1744,
+   "404": 1335,
+   "403": 548,
+   "410": 88,
+   "503": 74,
+   "406": 38,
+   "429": 28,
+   "500": 23
+  },
+  "domains": 3377,
+  "top_domains": {
+   "l7.alamy.com": {
+    "urls": 2178,
+    "ok_share": 1.0
+   },
+   "i.pinimg.com": {
+    "urls": 1979,
+    "ok_share": 1.0
+   },
+   "media.gettyimages.com": {
+    "urls": 1338,
+    "ok_share": 0.0
+   },
+   "i.dailymail.co.uk": {
+    "urls": 481,
+    "ok_share": 1.0
+   },
+   "c8.alamy.com": {
+    "urls": 413,
+    "ok_share": 1.0
+   },
+   "media.istockphoto.com": {
+    "urls": 355,
+    "ok_share": 0.0
+   },
+   "s-media-cache-ak0.pinimg.com": {
+    "urls": 346,
+    "ok_share": 1.0
+   },
+   "thumb1.shutterstock.com": {
+    "urls": 214,
+    "ok_share": 0.963
+   },
+   "image.shutterstock.com": {
+    "urls": 194,
+    "ok_share": 0.892
+   },
+   "lookaside.fbsbx.com": {
+    "urls": 187,
+    "ok_share": 0.0
+   }
+  },
+  "dup_captions": 290,
+  "dup_urls": 0,
+  "ks_len_downloaded_vs_dead": 0.06320161256923784,
+  "len_downloaded": 10.65809922295278,
+  "len_dead": 9.964495001723543
+ },
+ "text": {
+  "label": "cc_raw",
+  "captions": 315840,
+  "tokens": 3255424,
+  "types_all_splits": 26241,
+  "train_tokens": 3090624,
+  "train_types": 25818,
+  "ttr": 0.008353652854569174,
+  "root_ttr": 14.685864271443712,
+  "mtld": 131.3102517969235,
+  "hapax": 6646,
+  "hapax_pct_types": 0.25741730575567434,
+  "hapax_pct_tokens": 0.0021503748110413947,
+  "dis_legomena": 2257,
+  "dis_pct_types": 0.08741962971570222,
+  "hapax_dis_ratio": 2.9446167478954366,
+  "zipf_slope": -0.9582685974839533,
+  "heaps_K": 11.215264049191392,
+  "heaps_beta": 0.5547936728280282,
+  "len_mean": 10.307193515704155,
+  "len_std": 4.662631210096059,
+  "len_median": 9.0,
+  "len_p95": 19.0,
+  "len_p99": 26.0,
+  "len_min": 5,
+  "len_max": 49,
+  "chars_mean": 54.76296225937183,
+  "word_len_mean": 4.413114956720714,
+  "stopword_share": 0.36556598279182456,
+  "pos_noun": 0.36834189626481534,
+  "pos_verb": 0.10422518811765905,
+  "pos_adj": 0.09083984649793082,
+  "pos_det": 0.13177211443763615,
+  "pos_adp": 0.1517458192032835,
+  "train_lemmas": 17831,
+  "types_per_lemma": 1.4479277662497896,
+  "types_not_dictionary_as_written": 2948,
+  "likely_typo_types": 1199,
+  "vocab_min1": 25818,
+  "train_coverage_min1": 1.0,
+  "val_oov_tokens_min1": 0.002645631067961165,
+  "val_oov_captions_min1": 0.02556818181818182,
+  "vocab_min5": 14328,
+  "train_coverage_min5": 0.9935239615042141,
+  "val_oov_tokens_min5": 0.00908373786407767,
+  "val_oov_captions_min5": 0.08352272727272728,
+  "jaccard_train_val": 0.3992606989062917,
+  "chars_has_uppercase": 0.0,
+  "chars_starts_uppercase": 0.0,
+  "chars_all_caps_word": 0.0,
+  "chars_ends_with_period": 0.32910353535353537,
+  "chars_has_punctuation": 0.5194444444444445,
+  "chars_has_digit": 0.026136363636363635,
+  "chars_has_non_ascii": 0.0018308080808080809,
+  "chars_has_double_space": 0.0,
+  "chars_has_edge_whitespace": 0.0,
+  "chars_distinct_characters": 66,
+  "full_train_types": 51200,
+  "full_train_hapax_pct_types": 0.32310546875,
+  "left_right_captions": 0.010227272727272727
+ },
+ "paper_check": {
+  "paper (Table 3)": {
+   "train captions": 3318333.0,
+   "unique tokens": 51201.0,
+   "mean tokens/caption": 10.3,
+   "std": 4.5,
+   "median": 9.0
+  },
+  "measured": {
+   "train captions": 3318333.0,
+   "unique tokens": 51200.0,
+   "mean tokens/caption": 10.31,
+   "std": 4.67,
+   "median": 9.0
+  }
+ },
+ "cc_specific": {
+  "hypernym_share": {
+   "person": 0.1037,
+   "actor": 0.0292,
+   "artist": 0.0277,
+   "city": 0.023,
+   "people": 0.0176,
+   "player": 0.0174,
+   "team": 0.0138,
+   "film": 0.0128,
+   "model": 0.0098,
+   "country": 0.0084
+  },
+  "hypernym_share_coco": {
+   "person": 0.0413,
+   "actor": 0.0,
+   "artist": 0.0,
+   "city": 0.0175,
+   "people": 0.0697,
+   "player": 0.02,
+   "team": 0.0013,
+   "film": 0.0001,
+   "model": 0.0009,
+   "country": 0.0021
+  },
+  "punct_tokens": {
+   ".": 5203,
+   ",": 2592,
+   "-": 1029,
+   ":": 793,
+   "!": 546,
+   "'s": 523,
+   "?": 211,
+   "#": 196,
+   "...": 154,
+   "--": 129
+  },
+  "no_determiner_cc": 0.12771464646464648,
+  "no_determiner_coco": 0.04472581586418984,
+  "left_right": 0.010227272727272727
+ },
+ "images": {
+  "images": 10038,
+  "unreadable": 0,
+  "formats": {
+   "JPEG": 10006,
+   "WEBP": 28,
+   "MPO": 4
+  },
+  "modes": {
+   "RGB": 9971,
+   "L": 64,
+   "CMYK": 3
+  },
+  "grayscale": 64,
+  "distinct_sizes": 3340,
+  "median_width": 640.0,
+  "median_height": 494.0,
+  "min_side_over_400": 0.9829647340107591,
+  "aspect_le_2": 1.0,
+  "orientation": {
+   "landscape": 0.639,
+   "portrait": 0.218,
+   "square-ish": 0.144
+  },
+  "median_kb": 73.3798828125,
+  "pixel_mean": [
+   0.5238,
+   0.499,
+   0.4692
+  ],
+  "pixel_std": [
+   0.3088,
+   0.3024,
+   0.3145
+  ],
+  "colourfulness_mean": 0.05474843050822406,
+  "brightness_mean": 0.49622685830286406,
+  "very_dark": 175,
+  "very_bright": 375,
+  "low_contrast": 87,
+  "duplicate_pairs": 3,
+  "hash_candidates": 334,
+  "coco_cross_candidates": 495,
+  "coco_cross_duplicates": 0
+ }
+}

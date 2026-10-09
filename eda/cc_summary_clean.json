@@ -1,0 +1,205 @@
+{
+ "text": {
+  "label": "cc_clean",
+  "captions": 315840,
+  "tokens": 3027430,
+  "types_all_splits": 25775,
+  "train_tokens": 2874184,
+  "train_types": 25365,
+  "ttr": 0.008825113493081863,
+  "root_ttr": 14.961584266113714,
+  "mtld": 153.88430174969625,
+  "hapax": 6287,
+  "hapax_pct_types": 0.24786122609895525,
+  "hapax_pct_tokens": 0.002187403450857704,
+  "dis_legomena": 2215,
+  "dis_pct_types": 0.08732505420855509,
+  "hapax_dis_ratio": 2.838374717832957,
+  "zipf_slope": -0.9261094063645924,
+  "heaps_K": 11.734297036593862,
+  "heaps_beta": 0.5536576644873834,
+  "len_mean": 9.585328014184396,
+  "len_std": 4.269574921215996,
+  "len_median": 9.0,
+  "len_p95": 18.0,
+  "len_p99": 24.0,
+  "len_min": 3,
+  "len_max": 48,
+  "chars_mean": 53.276272796352586,
+  "word_len_mean": 4.665693288947402,
+  "stopword_share": 0.3896685111322031,
+  "pos_noun": 0.3954879284587499,
+  "pos_verb": 0.11376291513878878,
+  "pos_adj": 0.09680738813844401,
+  "pos_det": 0.141875868409231,
+  "pos_adp": 0.16350644059297334,
+  "train_lemmas": 17138,
+  "types_per_lemma": 1.4800443458980044,
+  "types_not_dictionary_as_written": 2156,
+  "likely_typo_types": 1150,
+  "vocab_min1": 25365,
+  "train_coverage_min1": 1.0,
+  "val_oov_tokens_min1": 0.0027602678047061588,
+  "val_oov_captions_min1": 0.024936868686868688,
+  "vocab_min5": 14310,
+  "train_coverage_min5": 0.9932307743693515,
+  "val_oov_tokens_min5": 0.009625047309554572,
+  "val_oov_captions_min5": 0.08257575757575758,
+  "jaccard_train_val": 0.40609117361784675,
+  "chars_has_uppercase": 0.0,
+  "chars_starts_uppercase": 0.0,
+  "chars_all_caps_word": 0.0,
+  "chars_ends_with_period": 0.0,
+  "chars_has_punctuation": 0.0,
+  "chars_has_digit": 0.026136363636363635,
+  "chars_has_non_ascii": 0.0,
+  "chars_has_double_space": 0.0,
+  "chars_has_edge_whitespace": 0.0,
+  "chars_distinct_characters": 37,
+  "full_train_types": 48482,
+  "full_train_hapax_pct_types": 0.30052390577946453,
+  "left_right_captions": 0.010227272727272727
+ },
+ "images": {
+  "output_shapes": {
+   "(224, 224, 3) from mode RGB": 996,
+   "(224, 224, 3) from mode L": 4
+  },
+  "all_224x224x3": true,
+  "pixel_mean_after_norm": [
+   0.1559,
+   0.1597,
+   0.2265
+  ],
+  "pixel_std_after_norm": [
+   1.1357,
+   1.1436,
+   1.127
+  ],
+  "distinct_sizes": 1
+ },
+ "preprocessing_steps": [
+  {
+   "step": "1 NFKC + whitespace",
+   "captions changed": 0,
+   "share": 0.0
+  },
+  {
+   "step": "2 lowercase",
+   "captions changed": 4,
+   "share": 1.2664640324214791e-05
+  },
+  {
+   "step": "3 join possessives / drop apostrophes",
+   "captions changed": 11246,
+   "share": 0.035606636271529886
+  },
+  {
+   "step": "4 punctuation -> removed",
+   "captions changed": 161772,
+   "share": 0.5121960486322188
+  },
+  {
+   "step": "5 spelling correction",
+   "captions changed": 0,
+   "share": 0.0
+  },
+  {
+   "step": "6 drop empty captions",
+   "captions changed": 0,
+   "share": 0.0
+  }
+ ],
+ "vocab": {
+  "size_with_specials": 26990,
+  "min_freq": 4,
+  "coverage": 0.9990315211920247,
+  "full_train_clean_types": 48482
+ },
+ "max_len": 15,
+ "p99_len_full_train": 24.0,
+ "truncated_share": 0.09200463003562331,
+ "no_flip_rows": 162,
+ "coco_vs_cc": {
+  "Captions per image": "1",
+  "Mean caption length (words)": "9.585328014184396",
+  "Median / 99th pct length": "9 / 24",
+  "Mean word length (chars)": "4.665693288947402",
+  "Stopword share": "0.3896685111322031",
+  "Captions without a/an/the": "0.12771464646464648",
+  "MTLD (lexical diversity, size-independent)": "153.88430174969625",
+  "Hapax share of vocabulary": "0.24786122609895525",
+  "Zipf slope": "-0.9261094063645924",
+  "Heaps \u03b2": "0.5536576644873834",
+  "POS: nouns / verbs / adjectives": "39.5% / 11.4% / 9.7%",
+  "Training vocabulary (own pipeline)": "26990",
+  "Own val words unknown to own vocabulary": "0.0014356002766793261",
+  "Own val captions with an unknown word": "0.013383838383838383",
+  "Val words unknown to the OTHER dataset's vocabulary": "0.12668519896114744",
+  "Val captions with a word unknown to the OTHER vocabulary": "0.6426767676767676"
+ },
+ "coco_vs_cc_coco": {
+  "Captions per image": "5",
+  "Mean caption length (words)": "10.462387468580092",
+  "Median / 99th pct length": "10 / 19",
+  "Mean word length (chars)": "4.011488375648704",
+  "Stopword share": "0.4487020905159179",
+  "Captions without a/an/the": "0.04472581586418984",
+  "MTLD (lexical diversity, size-independent)": "25.08269899540126",
+  "Hapax share of vocabulary": "0.3536526366715046",
+  "Zipf slope": "-1.1810288320715416",
+  "Heaps \u03b2": "0.5493997691032375",
+  "POS: nouns / verbs / adjectives": "35.4% / 11.6% / 8.2%",
+  "Training vocabulary (own pipeline)": "5718",
+  "Own val words unknown to own vocabulary": "0.011393768960958575",
+  "Own val captions with an unknown word": "0.10254871363981916",
+  "Val words unknown to the OTHER dataset's vocabulary": "0.007316924064465349",
+  "Val captions with a word unknown to the OTHER vocabulary": "0.06857920217660946"
+ },
+ "distinctive_words": {
+  "coco": [
+   "wii",
+   "racquet",
+   "nintendo",
+   "hotdog",
+   "urinals",
+   "controllers",
+   "hydrant",
+   "boarder",
+   "frisbee",
+   "selfie",
+   "remotes",
+   "rackets",
+   "snowboards",
+   "urinal",
+   "frisbees"
+  ],
+  "cc": [
+   "actor",
+   "premiere",
+   "vector",
+   "attends",
+   "artist",
+   "isolated",
+   "biological",
+   "seamless",
+   "week",
+   "illustration",
+   "icon",
+   "industry",
+   "director",
+   "comedian",
+   "footballer"
+  ]
+ },
+ "oov": {
+  "cc_val_in_coco_vocab_tokens": 0.12668519896114744,
+  "cc_val_in_coco_vocab_captions": 0.6426767676767676,
+  "coco_val_in_cc_vocab_tokens": 0.007316924064465349,
+  "coco_val_in_cc_vocab_captions": 0.06857920217660946,
+  "cc_val_in_cc_vocab_tokens": 0.0014356002766793261,
+  "cc_val_in_cc_vocab_captions": 0.013383838383838383,
+  "coco_val_in_coco_vocab_tokens": 0.011393768960958575,
+  "coco_val_in_coco_vocab_captions": 0.10254871363981916
+ }
+}

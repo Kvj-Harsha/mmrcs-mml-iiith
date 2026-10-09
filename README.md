@@ -14,8 +14,13 @@ Problem statement: [problem-statement.md](problem-statement.md)
 | `eda/eda.ipynb` | Raw EDA → preprocessing → clean EDA → comparison (step 2) |
 | `eda/report.md` | **Full data report**: findings and figures |
 | `eda/before_vs_after.md` | **Before vs after preprocessing** comparison |
-| `eda/figures/` | All plots used in the reports |
-| `eda/summary_raw.json`, `eda/summary_clean.json`, `eda/comparison.csv` | All numbers, machine-readable |
+| `eda/eda_utils.py` | Analysis functions shared by both notebooks (same statistics for COCO and CC) |
+| `prepare_cc.py` | Downloads Conceptual Captions: validation images + captions, train captions (text only) |
+| `eda/cc_eda.ipynb` | Conceptual Captions: raw EDA → preprocessing → clean EDA → comparison with COCO |
+| `eda/cc_report.md` | **Conceptual Captions report**, including COCO vs CC |
+| `eda/figures/` | All plots used in the reports (`cc_*` and `coco_vs_cc_*` for Conceptual Captions) |
+| `eda/summary_raw.json`, `eda/summary_clean.json`, `eda/comparison.csv` | All COCO numbers, machine-readable |
+| `eda/cc_summary_raw.json`, `eda/cc_summary_clean.json`, `eda/cc_comparison.csv`, `eda/coco_vs_cc.csv` | All CC numbers |
 
 ## Quick start (for teammates)
 
@@ -168,6 +173,47 @@ Full report: [`eda/report.md`](eda/report.md).
 - **Images:** uniform (mostly 640 px, 4:3 or 3:2), 66 grayscale, none corrupt.
 - **Duplicates:** the original Karpathy split had **10 photos in two splits** (6 train↔val, 2 train↔test, 2 val↔test). They're now removed, and an independent re-check finds 0 cross-split duplicates.
 
+## Conceptual Captions (second dataset)
+
+**What it is:** Conceptual Captions (CC3M, Google, 2018) is image–caption pairs taken from the alt-text of web images.
+- **Splits:** train 3,318,333 · validation 15,840 · test hidden.
+- **Format:** one caption per image. Names are replaced by generic words ("actor", "person").
+- **Images:** only distributed as web links, and many have died since 2018.
+- **Our use:** the **validation set as an out-of-domain test** for models trained on COCO. This is the standard practice.
+
+### How to run
+
+Run this after the COCO steps, because the comparison uses the COCO results:
+
+```bash
+pip install pyarrow                   # in addition to the libraries above
+python prepare_cc.py                  # ~20 min: validation images + captions, train captions (text only)
+jupyter nbconvert --to notebook --execute --inplace eda/cc_eda.ipynb   # ~5-10 min
+```
+
+- **Download:** ~360 MB of caption files plus ~1.4 GB of images.
+- **Check:** the script must end with `ALL CHECKS PASSED`.
+- **Interrupted?** Just run it again: finished images are kept, and known dead links aren't retried (`--retry-failed` retries them).
+- **Teammates' numbers may differ slightly:** links keep dying, so a teammate may get a few images fewer than our 10,038. `data/cc/val/download_log.csv` records what was fetched and why each failure happened.
+
+### Key results
+
+Full report: [`eda/cc_report.md`](eda/cc_report.md).
+
+| | COCO | Conceptual Captions |
+|---|---:|---:|
+| Images analysed | 40,494 | 10,038 (63% of validation links still work) |
+| Captions per image | 5 | 1 |
+| Mean caption length (words) | 10.5 | 9.6 |
+| Lexical diversity (MTLD) | 25 | 154 |
+| Training vocabulary | 5,718 | 26,990 |
+| Val captions with a word the **other** dataset's vocabulary doesn't know | 6.9% | **64.3%** |
+| Duplicate images shared with the other dataset | 0 | 0 |
+
+- **One-sided domain gap:** CC's vocabulary covers COCO, but COCO's doesn't cover CC, so a COCO-only model will struggle on web images.
+- **CC is web text,** not descriptions: stock-photo language ("isolated on a white background"), generic names ("actor attends the premiere"), and some machine-generated alt-text.
+- **CC preprocessing changes little:** captions are already lowercased and tokenised, so the main step is removing punctuation tokens. The vocabulary follows the CC paper's settings and is built from all 3.3M train captions.
+
 ## Data folder (not pushed to GitHub)
 
 ```
@@ -184,6 +230,16 @@ data/
 │   ├── preprocess_config.json    every text/image preprocessing setting
 │   ├── removed_duplicates.json   the 10 cross-split duplicate photos that were dropped
 │   └── analysis/                 spelling corrections, duplicate images, caption flags, image info
+├── cc/                           Conceptual Captions
+│   ├── val/
+│   │   ├── images/               downloaded validation images (cc_val_<row>.<ext>)
+│   │   ├── captions.json         one caption per downloaded image
+│   │   ├── captions_clean.json   cleaned captions + tokens
+│   │   ├── all_captions.json     all 15,840 validation captions (incl. dead links)
+│   │   └── download_log.csv      status of every link
+│   ├── train_captions.txt        all 3,318,333 train captions (text only)
+│   ├── vocab.json, preprocess_config.json
+│   └── analysis/
 └── downloads/                    original downloaded files (can be deleted)
 ```
 
