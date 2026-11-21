@@ -17,3 +17,14 @@ venv/
 # Secrets / OS
 .env
 .DS_Store
+
+# Demo assets (large, regenerate with task10k.make_demo_assets)
+clip-10k-task/demo_assets/
+clip-10k-task/results/
+
+# 10K CLIP task: only the two notebooks and task10k/ are pushed
+clip-10k-task/presentation/
+clip-10k-task/notebooks/*.html
+clip-10k-task/notebooks/explainer/
+clip-10k-task/notebooks/*.md
+clip-10k-task/finetune_bundle.zip
